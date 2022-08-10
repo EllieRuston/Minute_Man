@@ -1,0 +1,38 @@
+{% extends 'Base.html' %}
+
+{% block title %}
+   Search
+{% endblock %}
+ 
+{% block content %}
+   <h1>Search and Edit your Minutes</h1>
+
+    <table class="table table-hover table-dark">
+<thread>
+    <tr>
+        <!--column names-->
+        <th scope="col">User_ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
+
+    </tr>
+</thread>
+<tbody>
+    <!--rows inside table-->
+    {% for user in Users %}
+        <tr>
+            <td>{{ Users.User_ID }}</td>
+            <td>{{ Users.Name }}</td>
+            <td>{{ Users.Email }}</td>
+            <td>{{ Users.Password }}</td>
+            <td>
+                <button class="btn btn-outline btn-fail">Delete Minutes</button>
+                <button class="btn btn-outline btn-success">Edit Minutes</button>
+            </td>
+        </tr>
+    {% endfor %}
+
+</tbody>
+    </table>
+{% endblock %}   
